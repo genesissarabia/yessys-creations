@@ -6,15 +6,17 @@ public class Craft {
     private String craftName;
     private String eventCategory;
     private String craftSize;
+    private String craftImage;
 
 
     public Craft(){
     }
-    public Craft(Long id, String craftName, String eventCategory, String craftSize){
+    public Craft(Long id, String craftName, String eventCategory, String craftSize, String craftImage){
         this.id = id;
         this.craftName = craftName;
         this.eventCategory = eventCategory;
         this.craftSize = craftSize;
+        this.craftImage = craftImage;
     }
 
     public Long getId() {
@@ -47,6 +49,13 @@ public class Craft {
 
     public void setCraftSize(String craftSize) {
         this.craftSize = craftSize;
+    }
+
+    public String getCraftImage() {
+        return craftImage;
+    }
+    public void setCraftImage(String craftImage) {
+        this.craftImage = craftImage;
     }
 }
 
