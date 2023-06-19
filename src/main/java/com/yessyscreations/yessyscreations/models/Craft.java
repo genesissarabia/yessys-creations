@@ -1,6 +1,6 @@
 package com.yessyscreations.yessyscreations.models;
 
-public class Crafts {
+public class Craft {
 
     private Long id;
     private String craftName;
@@ -8,9 +8,9 @@ public class Crafts {
     private String craftSize;
 
 
-    public Crafts(){
+    public Craft(){
     }
-    public Crafts(Long id, String craftName, String eventCategory, String craftSize){
+    public Craft(Long id, String craftName, String eventCategory, String craftSize){
         this.id = id;
         this.craftName = craftName;
         this.eventCategory = eventCategory;
