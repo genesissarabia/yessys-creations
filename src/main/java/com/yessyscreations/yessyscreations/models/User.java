@@ -1,11 +1,22 @@
 package com.yessyscreations.yessyscreations.models;
 
+import jakarta.persistence.*;
+
+//@Entity
+//@Table(name = "users")
 public class User {
 
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "id", nullable = false)
     private Long id;
+//    @Column(name="name", nullable = false)
     private String name;
+//    @Column(name = "username", nullable = false)
     private String username;
+//    @Column(name = "password", nullable = false)
     private String password;
+//    @Column(name = "email", nullable = false)
     private String email;
 
 
