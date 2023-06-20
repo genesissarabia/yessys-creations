@@ -1,11 +1,21 @@
 package com.yessyscreations.yessyscreations.models;
 
-public class Craft {
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "crafts")
+public class Craft {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Long id;
+    @Column(name = "craft_name", nullable = false)
     private String craftName;
+    @Column(name = "event_category", nullable = false)
     private String eventCategory;
+    @Column(name = "craft_size", nullable = false)
     private String craftSize;
+    @Column(name = "craft_image", nullable = false)
     private String craftImage;
 
 
