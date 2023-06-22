@@ -2,8 +2,10 @@ package com.yessyscreations.yessyscreations.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class User {
 
     @Id
@@ -18,6 +20,8 @@ public class User {
     private String password;
     @Column(name = "email", nullable = false)
     private String email;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Craft> savedCrafts;
 
 
     public User(){
@@ -68,5 +72,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Craft> getSavedCrafts() {
+        return savedCrafts;
+    }
+
+    public void setSavedCrafts(List<Craft> savedCrafts) {
+        this.savedCrafts = savedCrafts;
     }
 }

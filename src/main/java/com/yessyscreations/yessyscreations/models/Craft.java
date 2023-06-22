@@ -3,7 +3,7 @@ package com.yessyscreations.yessyscreations.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "crafts")
+@Table(name = "craft")
 public class Craft {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +17,9 @@ public class Craft {
     private String craftSize;
     @Column(name = "craft_image", nullable = false)
     private String craftImage;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
 
     public Craft(){
@@ -66,6 +69,14 @@ public class Craft {
     }
     public void setCraftImage(String craftImage) {
         this.craftImage = craftImage;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
 
