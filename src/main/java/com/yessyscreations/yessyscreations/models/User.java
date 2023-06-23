@@ -20,7 +20,12 @@ public class User {
     private String password;
     @Column(name = "email", nullable = false)
     private String email;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    @ManyToMany(cascade = CascadeType.DETACH)
+    @JoinTable(
+            name="saved_crafts",
+            joinColumns={@JoinColumn(name="user_id")},
+            inverseJoinColumns={@JoinColumn(name="craft_id")}
+    )
     private List<Craft> savedCrafts;
 
 

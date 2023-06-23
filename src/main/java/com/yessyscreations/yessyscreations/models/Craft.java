@@ -2,6 +2,8 @@ package com.yessyscreations.yessyscreations.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "craft")
 public class Craft {
@@ -17,9 +19,8 @@ public class Craft {
     private String craftSize;
     @Column(name = "craft_image", nullable = false)
     private String craftImage;
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @ManyToMany(mappedBy = "users")
+    private List<User> users;
 
 
     public Craft(){
@@ -71,12 +72,12 @@ public class Craft {
         this.craftImage = craftImage;
     }
 
-    public User getUser() {
-        return user;
+    public List<User> getUsers() {
+        return users;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 }
 
