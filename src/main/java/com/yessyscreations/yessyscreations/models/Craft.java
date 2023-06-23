@@ -19,7 +19,7 @@ public class Craft {
     private String craftSize;
     @Column(name = "craft_image", nullable = false)
     private String craftImage;
-    @ManyToMany(mappedBy = "users")
+    @ManyToMany(mappedBy = "savedCrafts")
     private List<User> users;
 
 

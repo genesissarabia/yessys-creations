@@ -2,6 +2,7 @@ package com.yessyscreations.yessyscreations.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -20,7 +21,7 @@ public class User {
     private String password;
     @Column(name = "email", nullable = false)
     private String email;
-    @ManyToMany(cascade = CascadeType.DETACH)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name="saved_crafts",
             joinColumns={@JoinColumn(name="user_id")},
